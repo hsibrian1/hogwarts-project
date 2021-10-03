@@ -1,8 +1,9 @@
 export interface BaseData {
   name: string;
   patronus: number;
-  yearOfBirth: number;
+  age: number;
   image: string;
+  dateOfBirth: string;
 }
 
 export interface Character extends BaseData {}
