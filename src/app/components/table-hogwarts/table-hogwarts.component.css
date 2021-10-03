@@ -5,3 +5,9 @@ table {
 th.mat-sort-header-sorted {
   color: black;
 }
+
+.table-image {
+  width: 120px;
+  height: 100px;
+  border-radius: 5px;
+}
