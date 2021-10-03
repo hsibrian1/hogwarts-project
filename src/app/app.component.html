@@ -1,0 +1,20 @@
+<mat-toolbar class="custom-toolbar" color="primary">
+  <div id="projectName">
+    <span>Hogwarts Project</span>
+  </div>
+  <div id="links">
+    <a mat-button routerLink="/characters" routerLinkActive="link-active"
+      >Personajes</a
+    >
+    <a mat-button routerLink="/students" routerLinkActive="link-active"
+      >Estudiantes</a
+    >
+    <a mat-button routerLink="/teachers" routerLinkActive="link-active"
+      >Profesores</a
+    >
+    <a mat-button routerLink="/new-students" routerLinkActive="link-active"
+      >Nuevos Estudiantes</a
+    >
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>
