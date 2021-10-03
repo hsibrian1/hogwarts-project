@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> Añadir un nuevo estudiante </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="fg" (ngSubmit)="submit()">
+      <mat-form-field>
+        <mat-label>Nombre Completo</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Patronus</mat-label>
+        <input matInput formControlName="patronus" />
+      </mat-form-field>
+      <mat-form-field style="width: 20%; min-width: 300px;" appearance="fill">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" [disabled]="true"/>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker disabled="false"></mat-datepicker>
+      </mat-form-field>
+      <div class="upload-image-container">
+        <label class="custom-file-upload" for="file-upload">
+          <input
+            id="file-upload"
+            type="file"
+            accept="image/*"
+            (change)="showPreview($event)"
+          />
+          Elegir Foto
+        </label>
+
+        <!-- Image Preview -->
+        <div class="image-container" *ngIf="imageURL && imageURL !== ''">
+          <img [src]="imageURL" [alt]="fg.value.name" class="image-preview" />
+        </div>
+      </div>
+      <mat-error *ngIf="fg.controls.image.hasError('required')">Debe subir una Foto</mat-error>
+      <button mat-button type="submit">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
