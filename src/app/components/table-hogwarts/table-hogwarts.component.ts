@@ -23,6 +23,7 @@ export class TableHogwartsComponent implements OnInit, AfterViewInit, OnChanges 
   ngOnInit(): void {}
 
   defaultText = '-';
+  filterValue = '';
   
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -32,18 +33,22 @@ export class TableHogwartsComponent implements OnInit, AfterViewInit, OnChanges 
   dataSource = new MatTableDataSource(this.data);
 
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+    this.initSortAndPaginator()
+    this.applyFilter()
   }
 
   ngOnChanges(change: SimpleChanges): void {
     this.dataSource = new MatTableDataSource(change.data.currentValue)
+    this.initSortAndPaginator()
+    this.applyFilter()
+  }
+
+  initSortAndPaginator(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  applyFilter(): void {
+    this.dataSource.filter = this.filterValue.trim().toLowerCase();
   }
 }

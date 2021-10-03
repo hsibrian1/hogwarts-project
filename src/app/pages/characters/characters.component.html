@@ -2,6 +2,14 @@
   <mat-card-header>
     <mat-card-title>Personajes</mat-card-title>
   </mat-card-header>
+  <mat-form-field appearance="fill">
+    <mat-label>Seleccionar una Casa</mat-label>
+    <mat-select (selectionChange)="handleChange($event.value)">
+      <mat-option *ngFor="let house of houses" [value]="house.value">
+        {{house.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
   <mat-card-content>
     <app-table-hogwarts [data]="charactersData"></app-table-hogwarts>
   </mat-card-content>

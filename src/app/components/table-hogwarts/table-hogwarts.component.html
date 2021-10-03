@@ -2,7 +2,7 @@
   <mat-card-content>
     <mat-form-field appearance="fill">
       <mat-label>Filtrar</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Escribir..." />
+      <input matInput (keyup)="applyFilter()" [(ngModel)]="filterValue" placeholder="Escribir..." />
     </mat-form-field>
 
     <table mat-table [dataSource]="dataSource" matSort>
