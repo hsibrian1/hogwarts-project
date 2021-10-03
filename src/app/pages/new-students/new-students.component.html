@@ -1,8 +1,11 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>Nuevos Estudiantes</mat-card-title>
+    <mat-card-subtitle>
+      <a mat-raised-button routerLink="/new-students/create" color="primary">Añadir Estudiante</a>
+    </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <app-table-hogwarts></app-table-hogwarts>
+    <app-table-hogwarts [data]="dataStudents"></app-table-hogwarts>
   </mat-card-content>
 </mat-card>
