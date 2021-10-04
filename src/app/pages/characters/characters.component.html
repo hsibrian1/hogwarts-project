@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-form-field appearance="fill">
     <mat-label>Seleccionar una Casa</mat-label>
-    <mat-select (selectionChange)="handleChange($event.value)">
+    <mat-select (selectionChange)="handleChange($event.value)" value="slytherin">
       <mat-option *ngFor="let house of houses" [value]="house.value">
         {{house.viewValue}}
       </mat-option>
