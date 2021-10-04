@@ -4,10 +4,8 @@ import {
   Input,
   OnChanges,
   OnInit,
-  Output,
   SimpleChanges,
   ViewChild,
-  EventEmitter,
 } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -63,9 +61,9 @@ export class TableHogwartsComponent
   ngAfterViewInit(): void {
     try {
       this.initSortAndPaginator();
-    this.applyFilter();
+      this.applyFilter();
     } catch (error) {
-      console.error('From ngAfterViewInit', error)
+      console.error('From ngAfterViewInit', error);
     }
   }
 
@@ -89,7 +87,7 @@ export class TableHogwartsComponent
         this.dataSource.filter = this.filterValue.trim().toLowerCase();
       }
     } catch (error) {
-      console.error('From applyFilters', error)
+      console.error('From applyFilters', error);
     }
   }
 }

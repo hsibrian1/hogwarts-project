@@ -5,7 +5,7 @@
       <input matInput (keyup)="applyFilter()" [(ngModel)]="filterValue" placeholder="Escribir..." />
     </mat-form-field>
 
-    <table mat-table [dataSource]="dataSource" matSort>
+    <table mat-table [dataSource]="dataSource" data-test-id="hogwarts-table" matSort>
       <div *ngFor="let column of columns" >
         <div [ngSwitch]="column.columnDef">
           <ng-container *ngSwitchCase="'image'" [matColumnDef]="column.columnDef">

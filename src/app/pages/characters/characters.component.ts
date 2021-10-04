@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Character } from 'src/app/interfaces';
 import { CharactersService } from 'src/app/services/characters.service';
 
