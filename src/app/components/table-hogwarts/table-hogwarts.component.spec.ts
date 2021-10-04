@@ -44,7 +44,7 @@ describe('TableHogwartsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Check the ordering', () => {
+  it('Check the sort instance of MatSort', () => {
     fixture.detectChanges();
 
     const sort = component.dataSource.sort;
