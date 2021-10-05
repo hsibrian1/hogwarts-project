@@ -43,6 +43,6 @@ The list of teachers can be consulted through the public API, http://hp-api.hero
 - Documentation
   - Coming soon...
 - **Unit tests**
-  - Se agregó el unit test '**Verify that the data is being displayed**' el cual verifica que el table muestre la data de profesores correctamente (https://github.com/hsibrian1/hogwarts-project/blob/main/src/app/pages/teachers/teachers.component.spec.ts).
+  - Added the unit test 'Verify that the data is being displayed' which verifies that the table shows the data of teachers correctly (https://github.com/hsibrian1/hogwarts-project/blob/main/src/app/pages/teachers/teachers.component.spec.ts).
   - Added the unit test '**Check the sort instance of MatSort**' which verifies that the sort of our dataSource is an instance of MatSort (https://github.com/hsibrian1/hogwarts-project/blob/main/src/app/components/table-hogwarts/table-hogwarts.component.spec.ts).
   - New tests coming soon...
